@@ -17,10 +17,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Site Title"
+title                    : "Aryan Mathur"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Aryan Mathur"
+name                     : #"Aryan Mathur"
 description              : "My portfolio website."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -113,9 +113,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Aryan Mathur"
+  name             : #
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I’m an Electrical Engineering major at IIT Palakkad, working at the intersection of machine learning, computer vision, and intelligent systems. My projects span multimodal reasoning (CLIP + Transformers), reinforcement learning (PDiT), and edge-based IoT systems (PanEvaporiMeter). I have research experience with Adobe Research, and I’m driven by a goal to design learning systems that are not only high-performing but also interpretable and resource-efficient. I enjoy translating academic research into deployable solutions that impact real-world environments."
+  bio              : "I’m an Electrical Engineering major at IIT Palakkad, working at the intersection of machine learning, computer vision, and intelligent systems. I’m driven by a goal to design learning systems that are not only high-performing but also interpretable and resource-efficient. I enjoy translating academic research into deployable solutions that impact real-world environments."
   location         : "Palakkad, Kerala , India"
   email            : "aryannmathur@gmail.com"
   links:
