@@ -162,20 +162,19 @@ footer:
 
 
 # Navigation bar configuration for Minimal Mistakes
-header:
-  nav:
-    - title: "About"
-      url: "/"
-    - title: "Projects"
-      url: "/projects/"
-    - title: "Experience"
-      url: "/experience/"
-    - title: "Publications"
-      url: "/publications/"
-    - title: "Achievements"
-      url: "/achievements/"
-    - title: "Contact"
-      url: "/contact/"
+navigation:
+  - title: "About"
+    url: "/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "Experience"
+    url: "/experience/"
+  - title: "Publications"
+    url: "/publications/"
+  - title: "Achievements"
+    url: "/achievements/"
+  - title: "Contact"
+    url: "/contact/"
 
 
 # Reading Files
