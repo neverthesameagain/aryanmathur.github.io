@@ -117,7 +117,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I’m an Electrical Engineering major at IIT Palakkad, working at the intersection of machine learning, computer vision, and intelligent systems. My projects span multimodal reasoning (CLIP + Transformers), reinforcement learning (PDiT), and edge-based IoT systems (PanEvaporiMeter). I have research experience with Adobe Research, and I’m driven by a goal to design learning systems that are not only high-performing but also interpretable and resource-efficient. I enjoy translating academic research into deployable solutions that impact real-world environments."
   location         : "Palakkad, Kerala , India"
-  email            : "aryannmathur@gmail.com
+  email            : "aryannmathur@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
