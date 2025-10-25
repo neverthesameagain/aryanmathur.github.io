@@ -11,54 +11,142 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <a href="#home" class="nav-logo">Aryan<span>Mathur</span></a>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Aryan Mathur</h1>
-            <p class="subtitle">AI/ML Engineer & Researcher</p>
-            <p class="tagline">Building intelligent systems that learn, sense, and adapt to real-world uncertainty</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="cta-button primary">Get in Touch</a>
-                <a href="#research" class="cta-button secondary">View My Work</a>
+            <div class="hero-text">
+                <h1 class="gradient-text">Aryan Mathur</h1>
+                <p class="subtitle">AI/ML Engineer & Researcher</p>
+                <p class="tagline">Building intelligent systems that learn, sense, and adapt to real-world uncertainty</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="cta-button primary">Get in Touch</a>
+                    <a href="#research" class="cta-button secondary">Explore My Work</a>
+                </div>
+            </div>
+            <div class="hero-highlights">
+                <div class="highlight-card">
+                    <i class="fas fa-trophy"></i>
+                    <div>
+                        <h3>Top 0.9%</h3>
+                        <p>Amazon ML Challenge 2025</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-medal"></i>
+                    <div>
+                        <h3>National Top 10</h3>
+                        <p>Adobe AI Challenge 2024</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div>
+                        <h3>B.Tech EE</h3>
+                        <p>IIT Palakkad</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am an engineer and researcher passionate about building intelligent systems that learn, sense, and adapt to real-world uncertainty. My work lies at the intersection of AI, embedded systems, and intelligent automation—from reinforcement learning and multimodal perception to IoT-driven environmental sensing.</p>
+                    <p>I aim to design systems that go beyond static models to act and reason autonomously in dynamic environments, bridging the gap between cutting-edge research and practical applications.</p>
+                    <div class="about-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="#" class="social-link"><i class="fas fa-file-pdf"></i> Download CV</a>
+                    </div>
+                </div>
+                <div class="about-skills">
+                    <div class="skill-tag">Machine Learning</div>
+                    <div class="skill-tag">Computer Vision</div>
+                    <div class="skill-tag">Reinforcement Learning</div>
+                    <div class="skill-tag">Embedded Systems</div>
+                    <div class="skill-tag">IoT</div>
+                    <div class="skill-tag">Full-Stack Development</div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="research" class="research">
-        <h2>Research & Innovation</h2>
-        <div class="research-grid">
-            <div class="research-card">
-                <div class="research-icon"><i class="fas fa-brain"></i></div>
-                <h3>Perception–Decision Interleaving Transformers (PDiT)</h3>
-                <p class="research-tags">Deep Reinforcement Learning | Cognitive AI | Transformers</p>
-                <ul class="research-details">
-                    <li>Implemented transformer-based RL agent for BabyAI BossLevel environment</li>
-                    <li>Introduced multi-stage attention analysis for interpretability</li>
-                    <li>Reduced rollout redundancy by 18% with perception-decision synchronization</li>
-                </ul>
-                <a href="#" class="research-link">View Research</a>
-            </div>
-            
-            <div class="research-card">
-                <div class="research-icon"><i class="fas fa-video"></i></div>
-                <h3>Violence Detection & Highlight Generation</h3>
-                <p class="research-tags">Computer Vision | Temporal Learning | Media Analysis</p>
-                <ul class="research-details">
-                    <li>Designed hybrid CNN-BiLSTM model for violent sequence detection</li>
-                    <li>Achieved 93.5% accuracy with attention-based reasoning</li>
-                    <li>Published on arXiv (2025) for media moderation systems</li>
-                </ul>
-                <a href="#" class="research-link">View Paper</a>
+        <div class="container">
+            <h2>Research & Innovation</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Perception–Decision Interleaving Transformers (PDiT)</h3>
+                    <div class="research-tags">
+                        <span class="research-tag">Deep Reinforcement Learning</span>
+                        <span class="research-tag">Cognitive AI</span>
+                        <span class="research-tag">Transformers</span>
+                    </div>
+                    <ul class="research-details">
+                        <li>Implemented transformer-based RL agent for BabyAI BossLevel environment</li>
+                        <li>Introduced multi-stage attention analysis for interpretability</li>
+                        <li>Reduced rollout redundancy by 18% with perception-decision synchronization</li>
+                    </ul>
+                    <a href="#" class="research-link">View Research <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="research-card">
+                    <div class="research-icon"><i class="fas fa-video"></i></div>
+                    <h3>Violence Detection & Highlight Generation</h3>
+                    <div class="research-tags">
+                        <span class="research-tag">Computer Vision</span>
+                        <span class="research-tag">Temporal Learning</span>
+                        <span class="research-tag">Media Analysis</span>
+                    </div>
+                    <ul class="research-details">
+                        <li>Designed hybrid CNN-BiLSTM model for violent sequence detection</li>
+                        <li>Achieved 93.5% accuracy with attention-based reasoning</li>
+                        <li>Published on arXiv (2025) for media moderation systems</li>
+                    </ul>
+                    <a href="#" class="research-link">View Paper <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="research-card">
+                    <div class="research-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Autonomous Navigation with RL</h3>
+                    <div class="research-tags">
+                        <span class="research-tag">Reinforcement Learning</span>
+                        <span class="research-tag">Robotics</span>
+                        <span class="research-tag">Sim2Real</span>
+                    </div>
+                    <ul class="research-details">
+                        <li>Developed DRL-based navigation system for mobile robots</li>
+                        <li>Implemented domain randomization for Sim2Real transfer</li>
+                        <li>Reduced collision rate by 42% in real-world testing</li>
+                    </ul>
+                    <a href="#" class="research-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </section>
