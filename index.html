@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aryan Mathur - Portfolio</title>
+    <title>Aryan Mathur - AI/ML Engineer & Researcher</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -21,43 +24,195 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Hi, I'm Aryan Mathur</h1>
-            <p>Software Developer & Problem Solver</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
+            <h1>Aryan Mathur</h1>
+            <p class="subtitle">AI/ML Engineer & Researcher</p>
+            <p class="tagline">Building intelligent systems that learn, sense, and adapt to real-world uncertainty</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-button primary">Get in Touch</a>
+                <a href="#research" class="cta-button secondary">View My Work</a>
+            </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>I'm a passionate developer with expertise in building web applications and solving complex problems. I love learning new technologies and creating meaningful projects.</p>
+    <section id="research" class="research">
+        <h2>Research & Innovation</h2>
+        <div class="research-grid">
+            <div class="research-card">
+                <div class="research-icon"><i class="fas fa-brain"></i></div>
+                <h3>Perception–Decision Interleaving Transformers (PDiT)</h3>
+                <p class="research-tags">Deep Reinforcement Learning | Cognitive AI | Transformers</p>
+                <ul class="research-details">
+                    <li>Implemented transformer-based RL agent for BabyAI BossLevel environment</li>
+                    <li>Introduced multi-stage attention analysis for interpretability</li>
+                    <li>Reduced rollout redundancy by 18% with perception-decision synchronization</li>
+                </ul>
+                <a href="#" class="research-link">View Research</a>
+            </div>
+            
+            <div class="research-card">
+                <div class="research-icon"><i class="fas fa-video"></i></div>
+                <h3>Violence Detection & Highlight Generation</h3>
+                <p class="research-tags">Computer Vision | Temporal Learning | Media Analysis</p>
+                <ul class="research-details">
+                    <li>Designed hybrid CNN-BiLSTM model for violent sequence detection</li>
+                    <li>Achieved 93.5% accuracy with attention-based reasoning</li>
+                    <li>Published on arXiv (2025) for media moderation systems</li>
+                </ul>
+                <a href="#" class="research-link">View Paper</a>
+            </div>
+        </div>
     </section>
 
     <section id="projects" class="projects">
-        <h2>My Projects</h2>
+        <h2>Featured Projects</h2>
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ai">AI/ML</button>
+            <button class="filter-btn" data-filter="iot">IoT</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+        </div>
         <div class="project-grid">
-            <!-- Project cards will be added here -->
-            <div class="project-card">
-                <h3>Project 1</h3>
-                <p>Description of project 1.</p>
+            <div class="project-card" data-category="ai">
+                <div class="project-image" style="background-color: #f0f7ff;">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI Image Authenticity Detection</h3>
+                <p class="project-tags">Vision-Language Modeling | Explainable AI</p>
+                <p>Built CLIP + Qwen2-VL classifier to distinguish AI-generated images with natural-language justifications.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link">View Project</a>
+                    <span class="project-badge">Top 10 National</span>
+                </div>
             </div>
-            <div class="project-card">
-                <h3>Project 2</h3>
-                <p>Description of project 2.</p>
+
+            <div class="project-card" data-category="ai">
+                <div class="project-image" style="background-color: #f0fff4;">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>LossLess – Amazon ML Challenge 2025</h3>
+                <p class="project-tags">Multimodal ML | Regression | NLP</p>
+                <p>Designed DistilBERT-EfficientNet fusion for product pricing prediction, ranked Top 0.9% globally.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link">View Project</a>
+                    <span class="project-badge">Top 0.9%</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="iot">
+                <div class="project-image" style="background-color: #fff7ed;">
+                    <i class="fas fa-water"></i>
+                </div>
+                <h3>PanEvaporiMeter</h3>
+                <p class="project-tags">ESP32 | IoT | Sensor Fusion</p>
+                <p>Low-cost embedded system for automated evaporation measurement with real-time web dashboard.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
+                <div class="skill-tags">
+                    <span>Python</span>
+                    <span>PyTorch</span>
+                    <span>TensorFlow</span>
+                    <span>OpenCV</span>
+                    <span>YOLOv8</span>
+                    <span>Transformers</span>
+                    <span>Pandas</span>
+                    <span>NumPy</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3><i class="fas fa-robot"></i> RL & Control</h3>
+                <div class="skill-tags">
+                    <span>PPO</span>
+                    <span>Transformers</span>
+                    <span>Dynamic Programming</span>
+                    <span>Simulink</span>
+                    <span>MATLAB</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3><i class="fas fa-server"></i> Systems & Backend</h3>
+                <div class="skill-tags">
+                    <span>Java</span>
+                    <span>C++</span>
+                    <span>Django</span>
+                    <span>FastAPI</span>
+                    <span>PostgreSQL</span>
+                    <span>Docker</span>
+                    <span>Git</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3><i class="fas fa-microchip"></i> Hardware & IoT</h3>
+                <div class="skill-tags">
+                    <span>ESP32</span>
+                    <span>Sensor Fusion</span>
+                    <span>Embedded C++</span>
+                    <span>ESP-IDF</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="achievements">
+        <h2>Achievements</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="achievement-icon">🏅</div>
+                <h3>AWS AI/ML Scholar (Top 1%)</h3>
+                <p>Recognized globally for excellence in applied machine learning</p>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">🧠</div>
+                <h3>Amazon ML Challenge 2025</h3>
+                <p>Top 0.9% (251/27,600+) in multimodal regression competition</p>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">🖼</div>
+                <h3>Adobe AI Challenge 2024</h3>
+                <p>National Top 10 in explainable AI for authenticity detection</p>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-icon">🔭</div>
+                <h3>National Physics Olympiad</h3>
+                <p>AIR 433 (Top 0.2% in India)</p>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <h2>Get In Touch</h2>
-        <div class="social-links">
-            <a href="https://github.com/aryanmathur" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://linkedin.com/in/aryanmathur" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i> Email</a>
+        <p>I'm always open to discussing new projects, research opportunities, or potential collaborations.</p>
+        <div class="contact-methods">
+            <a href="mailto:aryannmathur@gmail.com" class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <span>aryannmathur@gmail.com</span>
+            </a>
+            <a href="https://github.com/neverthesameagain" target="_blank" class="contact-card">
+                <i class="fab fa-github"></i>
+                <span>github.com/neverthesameagain</span>
+            </a>
+            <a href="https://linkedin.com/in/aryannmathur" target="_blank" class="contact-card">
+                <i class="fab fa-linkedin"></i>
+                <span>linkedin.com/in/aryannmathur</span>
+            </a>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2025 Aryan Mathur. All rights reserved.</p>
+        <p>Built with ❤️ using HTML, CSS, and JavaScript</p>
     </footer>
 
     <script src="script.js"></script>

@@ -1,91 +1,147 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80, // Adjust for fixed header
-                behavior: 'smooth'
-            });
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
             
-            // Update URL without page jump
-            history.pushState(null, null, targetId);
-        }
-    });
-});
-
-// Add active class to navigation links on scroll
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav a');
-
-function highlightNav() {
-    let current = '';
-    const scrollPosition = window.scrollY + 100;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            current = '#' + section.getAttribute('id');
-        }
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // Adjust for fixed header
+                    behavior: 'smooth'
+                });
+                
+                // Update URL without page jump
+                history.pushState(null, null, targetId);
+            }
+        });
     });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === current) {
-            link.classList.add('active');
-        }
-    });
-}
+    // Add active class to navigation links on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
 
-window.addEventListener('scroll', highlightNav);
+    function highlightNav() {
+        let current = '';
+        const scrollPosition = window.scrollY + 100;
 
-// Add animation on scroll
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.project-card, .about p, .social-links a');
-    
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (elementTop < windowHeight - 100) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-        }
-    });
-};
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                current = '#' + section.getAttribute('id');
+            }
+        });
 
-// Set initial styles for animation
-document.addEventListener('DOMContentLoaded', () => {
-    const projectCards = document.querySelectorAll('.project-card');
-    const aboutText = document.querySelector('.about p');
-    const socialLinks = document.querySelectorAll('.social-links a');
-    
-    projectCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    });
-    
-    if (aboutText) {
-        aboutText.style.opacity = '0';
-        aboutText.style.transform = 'translateY(20px)';
-        aboutText.style.transition = 'opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s';
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === current) {
+                link.classList.add('active');
+            }
+        });
     }
-    
-    socialLinks.forEach((link, index) => {
-        link.style.opacity = '0';
-        link.style.transform = 'translateY(20px)';
-        link.style.transition = `opacity 0.6s ease ${0.3 + index * 0.1}s, transform 0.6s ease ${0.3 + index * 0.1}s`;
-    });
-    
-    // Trigger initial animation
-    setTimeout(animateOnScroll, 100);
-});
 
-window.addEventListener('scroll', animateOnScroll);
+    // Project filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            const filter = button.getAttribute('data-filter');
+            
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'flex';
+                    // Trigger reflow for animation
+                    void card.offsetWidth;
+                    card.classList.add('fade-in-up');
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('fade-in-up');
+                }
+            });
+        });
+    });
+
+    // Initialize animations
+    function animateOnScroll() {
+        const elements = document.querySelectorAll('.fade-in-up:not(.animated)');
+        
+        elements.forEach((element, index) => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight - 100) {
+                // Add delay based on index for staggered animation
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                    element.classList.add('animated');
+                }, index * 100);
+            }
+        });
+    }
+
+    // Set initial styles for animation
+    function initializeAnimations() {
+        const animatedElements = [
+            ...document.querySelectorAll('.research-card'),
+            ...document.querySelectorAll('.project-card'),
+            ...document.querySelectorAll('.skill-category'),
+            ...document.querySelectorAll('.achievement-card'),
+            ...document.querySelectorAll('.contact-card')
+        ];
+        
+        animatedElements.forEach((element, index) => {
+            element.classList.add('fade-in-up');
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            element.style.transitionDelay = `${index * 0.1}s`;
+        });
+        
+        // Trigger initial animation
+        setTimeout(animateOnScroll, 100);
+    }
+
+    // Initialize everything
+    initializeAnimations();
+    highlightNav();
+    
+    // Event listeners
+    window.addEventListener('scroll', () => {
+        highlightNav();
+        animateOnScroll();
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', function() {
+        const targetId = window.location.hash;
+        if (targetId) {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+
+    // Add hover effect for project cards on touch devices
+    if ('ontouchstart' in window) {
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('touchstart', function() {
+                this.classList.toggle('hover');
+            });
+        });
+    }
+});
