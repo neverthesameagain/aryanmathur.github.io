@@ -380,7 +380,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
 
     // Set initial styles for animation
     function initializeAnimations() {
@@ -413,12 +412,6 @@ document.addEventListener('DOMContentLoaded', function() {
         highlightNav();
         animateOnScroll();
     });
-    window.addEventListener('load', () => {
-        const hero = document.querySelector('.hero');
-        hero.style.opacity = '1';
-        hero.style.transition = 'opacity 1s ease-out';
-    });
-
 
     // Handle browser back/forward buttons
     window.addEventListener('popstate', function() {
@@ -442,20 +435,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-});
-
-// === Smooth Theme Transition Fix ===
-document.addEventListener('DOMContentLoaded', () => {
-  const root = document.documentElement;
-  root.style.transition = 'background-color 0.3s ease, color 0.3s ease';
-
-  const themeToggle = document.querySelector('.theme-toggle');
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.add('theme-transition');
-      setTimeout(() => {
-        document.body.classList.remove('theme-transition');
-      }, 500);
-    });
-  }
 });
