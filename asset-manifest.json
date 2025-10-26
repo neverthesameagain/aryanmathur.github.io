@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/aryanmathur.github.io/static/css/main.a2879b9c.css",
+    "main.js": "/aryanmathur.github.io/static/js/main.aaa8817b.js",
+    "index.html": "/aryanmathur.github.io/index.html",
+    "main.a2879b9c.css.map": "/aryanmathur.github.io/static/css/main.a2879b9c.css.map",
+    "main.aaa8817b.js.map": "/aryanmathur.github.io/static/js/main.aaa8817b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a2879b9c.css",
+    "static/js/main.aaa8817b.js"
+  ]
+}
