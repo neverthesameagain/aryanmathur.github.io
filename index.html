@@ -1,308 +1,598 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aryan Mathur - AI/ML Engineer & Researcher</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Aryan Mathur — AI/ML Engineer and Researcher from IIT Palakkad, exploring reinforcement learning, computer vision, and intelligent systems." />
+  <meta property="og:title" content="Aryan Mathur — AI Engineer & Researcher" />
+  <meta property="og:description"
+    content="Final-year IIT Palakkad undergraduate exploring intelligent systems through AI, ML, and embedded technology." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="thumbnail.png" />
+  <meta name="theme-color" content="#2563eb" />
+  <title>Aryan Mathur — Portfolio | AI Engineer & Researcher</title>
+  <link rel="icon" href="favicon.png" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* ===== Base ===== */
+    :root {
+      --bg: #0f172a;
+      --panel: #ffffff0a;
+      --text: #e5e7eb;
+      --text-dim: #9ca3af;
+      --white: #ffffff;
+      --brand: #60a5fa;
+      --brand-2: #2563eb;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --card-radius: 16px;
+      --container: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    h1,h2,h3 { color: var(--white); margin: 0 0 .5rem; }
+    p { margin: .5rem 0 1rem; }
+    a { color: var(--brand); text-decoration: none; }
+    section { padding: 5rem 1.5rem; }
+    .container { width: 90%; max-width: var(--container); margin: 0 auto; }
+
+    /* ===== Navbar ===== */
+    header#navbar {
+      position: fixed; inset: 0 0 auto 0;
+      width: 100%;
+      background: rgba(10,10,25,.7);
+      backdrop-filter: blur(10px);
+      padding: .9rem 1.25rem;
+      transform: translateY(-100%);
+      transition: transform .35s ease;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    header#navbar.nav-visible { transform: translateY(0); }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: var(--container); margin: 0 auto; }
+    .nav-logo { font-size: 1.25rem; font-weight: 700; color: var(--white); }
+    .nav-logo span { color: var(--brand); }
+    .menu-toggle { display: none; color: var(--white); font-size: 1.4rem; cursor: pointer; }
+    .nav-menu { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+    .nav-menu a { color: var(--white); font-weight: 500; transition: color .25s ease; }
+    .nav-menu a:hover { color: var(--brand); }
+    .nav-menu a.active { color: var(--brand); font-weight: 600; }
+
+    @media (max-width: 768px) {
+      header#navbar { transform: translateY(0); }
+      .menu-toggle { display: block; }
+      .nav-container { position: relative; }
+      .nav-menu {
+        position: fixed; top: 56px; left: 0; right: 0;
+        display: none; flex-direction: column; align-items: stretch;
+        background: rgba(15,15,35,.95);
+        padding: .5rem 0;
+        border-top: 1px solid rgba(255,255,255,.08);
+      }
+      .nav-menu.active { display: flex; }
+      .nav-menu li { border-bottom: 1px solid rgba(255,255,255,.06); }
+      .nav-menu a { padding: .9rem 1rem; }
+    }
+
+    /* ===== Landing ===== */
+    .landing {
+      min-height: 100vh;
+      display: grid; place-items: center;
+      text-align: center; position: relative;
+      padding-top: 7rem;
+    }
+    .landing-title { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0; }
+    .landing-subtitle { color: var(--brand); font-size: clamp(1rem, 2.5vw, 1.25rem); }
+    .scroll-hint { position: absolute; bottom: 18px; color: var(--brand); font-size: 1.25rem; }
+
+    /* ===== Grids / Cards ===== */
+    .grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+    .card {
+      background: var(--panel);
+      border-radius: var(--card-radius);
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px var(--shadow);
+      transition: transform .3s ease;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .subtext, .duration { color: var(--brand); font-size: .92rem; margin-bottom: .5rem; }
+    .section-subtitle { color: var(--text-dim); margin: .25rem 0 1rem; }
+
+    /* tags */
+    .tags span, .skill-tags span {
+      display: inline-block; margin: 4px 6px 0 0;
+      background: rgba(255,255,255,.08);
+      padding: 6px 10px; border-radius: 12px; font-size: .85rem;
+    }
+
+    /* ===== Skills ===== */
+    .skills-container { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+
+    /* ===== Fade-in ===== */
+    .fade-section { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
+    .fade-section.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== Footer ===== */
+    footer { text-align: center; padding: 1.5rem; background: #0b1120; font-size: .95rem; color: var(--text-dim); }
+  </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <a href="#home" class="nav-logo">Aryan<span>Mathur</span></a>
-            
-            <button class="menu-toggle" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- ===== Navigation ===== -->
+  <header id="navbar">
+    <nav class="nav-container">
+      <a href="#home" class="nav-logo">Aryan<span>Mathur</span></a>
+      <div class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="gradient-text">Aryan Mathur</h1>
-                <p class="subtitle">AI/ML Engineer & Researcher</p>
-                <p class="tagline">Building intelligent systems that learn, sense, and adapt to real-world uncertainty</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="cta-button primary">Get in Touch</a>
-                    <a href="#research" class="cta-button secondary">Explore My Work</a>
-                </div>
-            </div>
-            <div class="hero-highlights">
-                <div class="highlight-card">
-                    <i class="fas fa-trophy"></i>
-                    <div>
-                        <h3>Top 0.9%</h3>
-                        <p>Amazon ML Challenge 2025</p>
-                    </div>
-                </div>
-                <div class="highlight-card">
-                    <i class="fas fa-medal"></i>
-                    <div>
-                        <h3>National Top 10</h3>
-                        <p>Adobe AI Challenge 2024</p>
-                    </div>
-                </div>
-                <div class="highlight-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div>
-                        <h3>B.Tech EE</h3>
-                        <p>IIT Palakkad</p>
-                    </div>
-                </div>
-            </div>
+  <!-- ===== Landing ===== -->
+  <section id="home" class="landing">
+    <div>
+      <h1 class="landing-title">Aryan Mathur</h1>
+      <p class="landing-subtitle">AI Engineer • Researcher • Developer</p>
+    </div>
+    <div class="scroll-hint"><i class="fas fa-chevron-down"></i></div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="fade-section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I am a final-year Electrical Engineering undergraduate at the Indian Institute of Technology Palakkad, working at the intersection of artificial intelligence, embedded systems, and control. My work spans reinforcement learning, computer vision, IoT, and applied deep learning — building systems that not only compute but also reason.
+      </p>
+      <p>
+        I lead and contribute to research and open-source initiatives focused on perception–decision coupling, multimodal reasoning, and efficient system design.
+      </p>
+      <p class="section-subtitle">
+        <a href="https://github.com/neverthesameagain" target="_blank"><i class="fab fa-github"></i> GitHub</a> &nbsp;|&nbsp;
+        <a href="https://linkedin.com/in/aryannmathur" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &nbsp;|&nbsp;
+        <a href="resume.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Resume</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Research ===== -->
+  <section id="research" class="fade-section">
+    <div class="container">
+      <h2>Research & Publications</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Violence Detection & Highlight Generation</h3>
+          <p class="section-subtitle">Computer Vision • Sequence Learning</p>
+          <ul>
+            <li>CNN–BiLSTM hybrid model for temporal violence detection in videos; 93.5% accuracy.</li>
+            <li>Attention-based explainability for highlight generation.</li>
+          </ul>
+          <div class="tags"><span>PyTorch</span><span>BiLSTM</span><span>Attention</span></div>
+          <p><a href="https://github.com/neverthesameagain/Voilence-Detection-and-Highlight-Generation-using-BiLSTM" target="_blank">Repository</a></p>
         </div>
-        <div class="scroll-indicator">
-            <span>Scroll to explore</span>
-            <i class="fas fa-chevron-down"></i>
+        <div class="card">
+          <h3>Perception–Decision Interleaving Transformers (PDiT)</h3>
+          <p class="section-subtitle">Deep RL • Transformers • Cognitive AI</p>
+          <ul>
+            <li>Dual-transformer design to learn synchrony between perception and decision-making.</li>
+            <li>Improved BabyAI BossLevel performance with attention-based interpretability.</li>
+          </ul>
+          <div class="tags"><span>PPO</span><span>Transformers</span><span>BabyAI</span></div>
+          <p><a href="https://github.com/neverthesameagain/PDiT-Deep-Reinforcement-Learning" target="_blank">Repository</a></p>
         </div>
-    </section>
-    
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am an engineer and researcher passionate about building intelligent systems that learn, sense, and adapt to real-world uncertainty. My work lies at the intersection of AI, embedded systems, and intelligent automation—from reinforcement learning and multimodal perception to IoT-driven environmental sensing.</p>
-                    <p>I aim to design systems that go beyond static models to act and reason autonomously in dynamic environments, bridging the gap between cutting-edge research and practical applications.</p>
-                    <div class="about-links">
-                        <a href="#" class="social-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="#" class="social-link"><i class="fas fa-file-pdf"></i> Download CV</a>
-                    </div>
-                </div>
-                <div class="about-skills">
-                    <div class="skill-tag">Machine Learning</div>
-                    <div class="skill-tag">Computer Vision</div>
-                    <div class="skill-tag">Reinforcement Learning</div>
-                    <div class="skill-tag">Embedded Systems</div>
-                    <div class="skill-tag">IoT</div>
-                    <div class="skill-tag">Full-Stack Development</div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Experience ===== -->
+  <section id="experience" class="fade-section">
+    <div class="container">
+      <h2>Work Experience</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Advanced Application Engineering Intern — Accenture</h3>
+          <p class="duration">May 2025 – July 2025</p>
+          <ul>
+            <li>Deployed distributed ML pipelines on AWS (SageMaker, Lambda, S3) integrating NLP microservices and REST APIs.</li>
+            <li>Automated CI/CD with GitHub Actions, reducing deployment latency by 35% and improving reliability.</li>
+            <li>Optimized performance for large-scale systems in Linux/Unix environments.</li>
+          </ul>
         </div>
-    </section>
 
-    <section id="research" class="research">
-        <div class="container">
-            <h2>Research & Innovation</h2>
-            <div class="research-grid">
-                <div class="research-card">
-                    <div class="research-icon"><i class="fas fa-brain"></i></div>
-                    <h3>Perception–Decision Interleaving Transformers (PDiT)</h3>
-                    <div class="research-tags">
-                        <span class="research-tag">Deep Reinforcement Learning</span>
-                        <span class="research-tag">Cognitive AI</span>
-                        <span class="research-tag">Transformers</span>
-                    </div>
-                    <ul class="research-details">
-                        <li>Implemented transformer-based RL agent for BabyAI BossLevel environment</li>
-                        <li>Introduced multi-stage attention analysis for interpretability</li>
-                        <li>Reduced rollout redundancy by 18% with perception-decision synchronization</li>
-                    </ul>
-                    <a href="#" class="research-link">View Research <i class="fas fa-arrow-right"></i></a>
-                </div>
-                
-                <div class="research-card">
-                    <div class="research-icon"><i class="fas fa-video"></i></div>
-                    <h3>Violence Detection & Highlight Generation</h3>
-                    <div class="research-tags">
-                        <span class="research-tag">Computer Vision</span>
-                        <span class="research-tag">Temporal Learning</span>
-                        <span class="research-tag">Media Analysis</span>
-                    </div>
-                    <ul class="research-details">
-                        <li>Designed hybrid CNN-BiLSTM model for violent sequence detection</li>
-                        <li>Achieved 93.5% accuracy with attention-based reasoning</li>
-                        <li>Published on arXiv (2025) for media moderation systems</li>
-                    </ul>
-                    <a href="#" class="research-link">View Paper <i class="fas fa-arrow-right"></i></a>
-                </div>
-                
-                <div class="research-card">
-                    <div class="research-icon"><i class="fas fa-robot"></i></div>
-                    <h3>Autonomous Navigation with RL</h3>
-                    <div class="research-tags">
-                        <span class="research-tag">Reinforcement Learning</span>
-                        <span class="research-tag">Robotics</span>
-                        <span class="research-tag">Sim2Real</span>
-                    </div>
-                    <ul class="research-details">
-                        <li>Developed DRL-based navigation system for mobile robots</li>
-                        <li>Implemented domain randomization for Sim2Real transfer</li>
-                        <li>Reduced collision rate by 42% in real-world testing</li>
-                    </ul>
-                    <a href="#" class="research-link">View Project <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
+        <div class="card">
+          <h3>AI/ML Intern — EasyAlgo</h3>
+          <p class="duration">May 2024 – Aug 2024</p>
+          <ul>
+            <li>Built predictive time-series models and information retrieval systems using TensorFlow, Python, and SQL.</li>
+            <li>Developed data pipelines with NumPy/Pandas achieving 40% faster ingestion.</li>
+            <li>Integrated RL-based optimization for adaptive trading strategies with distributed storage.</li>
+          </ul>
         </div>
-    </section>
 
-    <section id="projects" class="projects">
-        <h2>Featured Projects</h2>
-        <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="ai">AI/ML</button>
-            <button class="filter-btn" data-filter="iot">IoT</button>
-            <button class="filter-btn" data-filter="web">Web</button>
+        <div class="card">
+          <h3>Software & Platform Intern — Fact App</h3>
+          <p class="duration">June 2023 – July 2023</p>
+          <ul>
+            <li>Contributed to a web platform for JEE aspirants and JOSAA counselling.</li>
+            <li>Led debugging and testing, resolving critical UI/logic issues; onboarded 500 mentors and mentees.</li>
+            <li>Helped 9000+ students receive guided admission support via the platform.</li>
+          </ul>
         </div>
-        <div class="project-grid">
-            <div class="project-card" data-category="ai">
-                <div class="project-image" style="background-color: #f0f7ff;">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <h3>AI Image Authenticity Detection</h3>
-                <p class="project-tags">Vision-Language Modeling | Explainable AI</p>
-                <p>Built CLIP + Qwen2-VL classifier to distinguish AI-generated images with natural-language justifications.</p>
-                <div class="project-links">
-                    <a href="#" class="project-link">View Project</a>
-                    <span class="project-badge">Top 10 National</span>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="project-card" data-category="ai">
-                <div class="project-image" style="background-color: #f0fff4;">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>LossLess – Amazon ML Challenge 2025</h3>
-                <p class="project-tags">Multimodal ML | Regression | NLP</p>
-                <p>Designed DistilBERT-EfficientNet fusion for product pricing prediction, ranked Top 0.9% globally.</p>
-                <div class="project-links">
-                    <a href="#" class="project-link">View Project</a>
-                    <span class="project-badge">Top 0.9%</span>
-                </div>
-            </div>
-
-            <div class="project-card" data-category="iot">
-                <div class="project-image" style="background-color: #fff7ed;">
-                    <i class="fas fa-water"></i>
-                </div>
-                <h3>PanEvaporiMeter</h3>
-                <p class="project-tags">ESP32 | IoT | Sensor Fusion</p>
-                <p>Low-cost embedded system for automated evaporation measurement with real-time web dashboard.</p>
-                <div class="project-links">
-                    <a href="#" class="project-link">View Project</a>
-                </div>
-            </div>
+  <!-- ===== Education ===== -->
+  <section id="education" class="fade-section">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Indian Institute of Technology, Palakkad</h3>
+          <p class="subtext">B.Tech — Electrical, Electronics & Communication Engineering</p>
+          <p class="duration">2022 – 2026 • CGPA: 7.97 / 10</p>
+          <ul>
+            <li>Coursework: Machine Learning, Reinforcement Learning, Optimization, Software Engineering, Microprocessors.</li>
+          </ul>
         </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
-                <div class="skill-tags">
-                    <span>Python</span>
-                    <span>PyTorch</span>
-                    <span>TensorFlow</span>
-                    <span>OpenCV</span>
-                    <span>YOLOv8</span>
-                    <span>Transformers</span>
-                    <span>Pandas</span>
-                    <span>NumPy</span>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <h3><i class="fas fa-robot"></i> RL & Control</h3>
-                <div class="skill-tags">
-                    <span>PPO</span>
-                    <span>Transformers</span>
-                    <span>Dynamic Programming</span>
-                    <span>Simulink</span>
-                    <span>MATLAB</span>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <h3><i class="fas fa-server"></i> Systems & Backend</h3>
-                <div class="skill-tags">
-                    <span>Java</span>
-                    <span>C++</span>
-                    <span>Django</span>
-                    <span>FastAPI</span>
-                    <span>PostgreSQL</span>
-                    <span>Docker</span>
-                    <span>Git</span>
-                </div>
-            </div>
-            
-            <div class="skill-category">
-                <h3><i class="fas fa-microchip"></i> Hardware & IoT</h3>
-                <div class="skill-tags">
-                    <span>ESP32</span>
-                    <span>Sensor Fusion</span>
-                    <span>Embedded C++</span>
-                    <span>ESP-IDF</span>
-                </div>
-            </div>
+        <div class="card">
+          <h3>Little Angels School, Sonipat</h3>
+          <p class="subtext">XII Boards — Engineering Science (Non-Medical)</p>
+          <p class="duration">2019 – 2021 • 97.4%</p>
+          <ul>
+            <li>Activities: Coding, Debating, Acting, Quizzes, Swimming.</li>
+          </ul>
         </div>
-    </section>
-
-    <section id="achievements" class="achievements">
-        <h2>Achievements</h2>
-        <div class="achievements-grid">
-            <div class="achievement-card">
-                <div class="achievement-icon">🏅</div>
-                <h3>AWS AI/ML Scholar (Top 1%)</h3>
-                <p>Recognized globally for excellence in applied machine learning</p>
-            </div>
-            <div class="achievement-card">
-                <div class="achievement-icon">🧠</div>
-                <h3>Amazon ML Challenge 2025</h3>
-                <p>Top 0.9% (251/27,600+) in multimodal regression competition</p>
-            </div>
-            <div class="achievement-card">
-                <div class="achievement-icon">🖼</div>
-                <h3>Adobe AI Challenge 2024</h3>
-                <p>National Top 10 in explainable AI for authenticity detection</p>
-            </div>
-            <div class="achievement-card">
-                <div class="achievement-icon">🔭</div>
-                <h3>National Physics Olympiad</h3>
-                <p>AIR 433 (Top 0.2% in India)</p>
-            </div>
+        <div class="card">
+          <h3>Little Angels School, Sonipat</h3>
+          <p class="subtext">X Boards — CBSE</p>
+          <p class="duration">2007 – 2019 • 98.2%</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact" class="contact">
-        <h2>Get In Touch</h2>
-        <p>I'm always open to discussing new projects, research opportunities, or potential collaborations.</p>
-        <div class="contact-methods">
-            <a href="mailto:aryannmathur@gmail.com" class="contact-card">
-                <i class="fas fa-envelope"></i>
-                <span>aryannmathur@gmail.com</span>
-            </a>
-            <a href="https://github.com/neverthesameagain" target="_blank" class="contact-card">
-                <i class="fab fa-github"></i>
-                <span>github.com/neverthesameagain</span>
-            </a>
-            <a href="https://linkedin.com/in/aryannmathur" target="_blank" class="contact-card">
-                <i class="fab fa-linkedin"></i>
-                <span>linkedin.com/in/aryannmathur</span>
-            </a>
+  <!-- ===== Leadership & PORs ===== -->
+  <section id="leadership" class="fade-section">
+    <div class="container">
+      <h2>Leadership & Positions of Responsibility</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Placement Coordinator</h3>
+          <p class="subtext">Career Development Cell, IIT Palakkad</p>
+          <p class="duration">2025 – Present</p>
+          <p>Coordinating institute placements, corporate outreach, and student training across multiple sectors.</p>
         </div>
-    </section>
+        <div class="card">
+          <h3>Contingent Leader</h3>
+          <p class="subtext">Inter IIT Tech Meet 13.0, IIT Bombay</p>
+          <p class="duration">2024</p>
+          <p>Led IIT Palakkad’s 63-member delegation; managed technical strategy, logistics, and inter-domain coordination.</p>
+        </div>
+        <div class="card">
+          <h3>Founder & President</h3>
+          <p class="subtext">Entrepreneurship Cell, IIT Palakkad</p>
+          <p class="duration">2024 – 2025</p>
+          <p>Established the institute’s first E-Cell; hosted hackathons and startup mentorship sessions for 300+ participants.</p>
+        </div>
+        <div class="card">
+          <h3>Software Systems Lead</h3>
+          <p class="subtext">Communicator SWE 2025</p>
+          <p>Architected multi-module CI/CD with Java/Maven on Azure DevOps, including self-hosted macOS agents.</p>
+        </div>
+        <div class="card">
+          <h3>Mentor</h3>
+          <p class="subtext">AI & Robotics Systems</p>
+          <p>Guided undergraduate teams on AI-enabled control and robotics with an emphasis on robust deployment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Aryan Mathur. All rights reserved.</p>
-        <p>Built with ❤️ using HTML, CSS, and JavaScript</p>
-    </footer>
+  <!-- ===== Projects ===== -->
+  <section id="projects" class="fade-section">
+    <div class="container">
+      <h2>Selected Projects</h2>
+      <p class="section-subtitle">From multimodal AI and reinforcement learning to embedded IoT and scalable software systems.</p>
+      <div class="grid">
+        <!-- Research / AI -->
+        <div class="card">
+          <h3>Violence Detection & Highlight Generation</h3>
+          <p><strong>Tech:</strong> PyTorch, CNN–BiLSTM, Attention</p>
+          <p>Hybrid model for temporal violence detection in video streams with attention-based explainability (93.5% accuracy).</p>
+          <p><a href="https://github.com/neverthesameagain/Voilence-Detection-and-Highlight-Generation-using-BiLSTM" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>Perception–Decision Interleaving Transformers (PDiT)</h3>
+          <p><strong>Tech:</strong> Python, PPO, Transformers</p>
+          <p>Dual-transformer RL agent synchronizing perception and decision modules; improved BabyAI BossLevel performance.</p>
+          <p><a href="https://github.com/neverthesameagain/PDiT-Deep-Reinforcement-Learning" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>AI Image Detection & Reasoning</h3>
+          <p><strong>Tech:</strong> CLIP, Qwen2-VL, PyTorch Lightning</p>
+          <p>Explainable multimodal classifier distinguishing AI-generated imagery with artifact-based reasoning (96.5% in challenge).</p>
+          <p><a href="https://github.com/neverthesameagain/AI-Image-Detection-and-Reasoning---Adobe" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>LossLess — Amazon ML Challenge 2025</h3>
+          <p><strong>Tech:</strong> DistilBERT, EfficientNet-B0, LightGBM</p>
+          <p>Multimodal text–image regression for e-commerce price prediction. Ranked Top 0.9% globally (251/27,600+).</p>
+          <p><a href="https://github.com/neverthesameagain/LossLess---Amazon-ML-Challenge-2025" target="_blank">Repository</a></p>
+        </div>
+        <!-- IoT / Embedded -->
+        <div class="card">
+          <h3>PanEvaporiMeter</h3>
+          <p><strong>Tech:</strong> ESP32 (ESP-IDF), C++, HTML</p>
+          <p>IoT device measuring real-time evaporation using ultrasonic + temperature sensors with a responsive web UI.</p>
+          <p><a href="https://github.com/neverthesameagain/PanEvaporiMeter" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>KLM52Z Microprocessor Projects</h3>
+          <p><strong>Tech:</strong> C</p>
+          <p>Embedded applications including counters, ADC-based displays, and LED control on the KLM52Z platform.</p>
+          <p><a href="https://github.com/neverthesameagain/KLM52Z-Microprocessor-Projects" target="_blank">Repository</a></p>
+        </div>
+        <!-- SWE / Systems -->
+        <div class="card">
+          <h3>CMate — Campus Companion Platform</h3>
+          <p><strong>Tech:</strong> Django, PostgreSQL, REST</p>
+          <p>Full-stack event and resource management system for 200+ users with secure authentication.</p>
+          <p><a href="https://github.com/neverthesameagain/All-You-Need" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>Java Communicator — SWE 2025</h3>
+          <p><strong>Tech:</strong> Java, Maven, Sockets</p>
+          <p>Modular message-exchange system integrated with Azure DevOps CI/CD and self-hosted agents.</p>
+          <p><a href="https://github.com/neverthesameagain/Java-front-Communicator-SWE" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>Personalised MCP Server</h3>
+          <p><strong>Tech:</strong> Python, FastAPI</p>
+          <p>Secure Model Context Protocol server for resume personalization with Bearer authentication.</p>
+          <p><a href="https://github.com/neverthesameagain/Personalised-MCP-server" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>MOSFET & Diode Parameter Extraction</h3>
+          <p><strong>Tech:</strong> Python, NumPy, Curve Fitting</p>
+          <p>Automated extraction of semiconductor I-V parameters bridging classical device models with ML regression.</p>
+          <p><a href="https://github.com/neverthesameagain/Parameter-Extraction-of-Diodes-and-MOSFETS" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>What-ya-Wearing (YOLOv8 PPE Detection)</h3>
+          <p><strong>Tech:</strong> Python, YOLOv8, OpenCV</p>
+          <p>Real-time PPE detection with preprocessing pipelines converting Pascal VOC to YOLO format.</p>
+          <p><a href="https://github.com/neverthesameagain/What-ya-Wearing" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>iac — CI/CD HTML Deployment</h3>
+          <p><strong>Tech:</strong> HTML, JS, PHP</p>
+          <p>Static deployment demonstration using GitLab CI/CD for automated publishing workflows.</p>
+          <p><a href="https://github.com/neverthesameagain/iac" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>Behaviour Simulation — Adobe Challenge</h3>
+          <p><strong>Tech:</strong> BERT, Transformers</p>
+          <p>NLP regression for tweet engagement prediction with attention-based pattern analysis.</p>
+          <p><a href="https://github.com/neverthesameagain/Behaviour-Simulation-Challenge-by-Adobe" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>Data Extraction & Visualization</h3>
+          <p><strong>Tech:</strong> Python, Pandas, HTML</p>
+          <p>Automated HTML parsing and relational visualization of cross-linked entities with custom processing.</p>
+          <p><a href="https://github.com/neverthesameagain/Data_Extraction_and_Visualization_Project" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>Automated Data Extraction from Government Websites</h3>
+          <p><strong>Tech:</strong> Python, Selenium</p>
+          <p>Structured extraction of public datasets from government portals.</p>
+          <p><a href="https://github.com/neverthesameagain/Automated-Data-Extraction-from-Gov-Websites" target="_blank">Repository</a></p>
+        </div>
+        <div class="card">
+          <h3>DSA that is Actually Interesting</h3>
+          <p><strong>Tech:</strong> Python, Jupyter</p>
+          <p>A conceptual collection of algorithmic problems implemented for deeper understanding and experimentation.</p>
+          <p><a href="https://github.com/neverthesameagain/DSA-that-is-actually-interesting" target="_blank">Repository</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- ===== Skills ===== -->
+  <section id="skills" class="fade-section">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="skills-container">
+        <div class="card">
+          <h3>Artificial Intelligence & Machine Learning</h3>
+          <div class="skill-tags">
+            <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>HuggingFace</span><span>Scikit-learn</span><span>OpenCV</span><span>YOLOv8</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Reinforcement Learning & Decision Systems</h3>
+          <div class="skill-tags">
+            <span>PPO</span><span>Q-Learning</span><span>Monte Carlo</span><span>Temporal Difference</span><span>Value Function Approximation</span><span>MATLAB</span><span>MiniGrid / BabyAI</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Systems & Backend Engineering</h3>
+          <div class="skill-tags">
+            <span>Java</span><span>C++</span><span>Django</span><span>FastAPI</span><span>Flask</span><span>PostgreSQL</span><span>SQL</span><span>Docker</span><span>Git</span><span>REST API Design</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Embedded Systems & IoT</h3>
+          <div class="skill-tags">
+            <span>ESP32</span><span>C / C++</span><span>ESP-IDF</span><span>Arduino</span><span>Sensor Fusion</span><span>Signal Processing</span><span>Control Systems</span><span>MATLAB / Simulink</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Cloud, DevOps & Tools</h3>
+          <div class="skill-tags">
+            <span>AWS (SageMaker, Lambda, S3)</span><span>Azure DevOps</span><span>GitHub Actions</span><span>CI/CD Pipelines</span><span>Linux / Unix</span><span>Docker Compose</span><span>Networking</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Core Competencies</h3>
+          <div class="skill-tags">
+            <span>Data Structures & Algorithms</span><span>Software Design</span><span>Distributed Systems</span><span>Information Retrieval</span><span>Scalability</span><span>Optimization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Achievements ===== -->
+  <section id="achievements" class="fade-section">
+    <div class="container">
+      <h2>Achievements</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Amazon ML Challenge 2025 — Top 0.9%</h3>
+          <p>Ranked 251/27,600+ for multimodal product-price prediction using DistilBERT & EfficientNet fusion.</p>
+        </div>
+        <div class="card">
+          <h3>AWS AI/ML Scholar — Top 1%</h3>
+          <p>Recognized globally for applied ML and deep learning excellence.</p>
+        </div>
+        <div class="card">
+          <h3>Adobe AI Challenge 2024 — National Finalist (Rank 9)</h3>
+          <p>Multimodal XAI system for detecting AI-generated images with artifact-based reasoning.</p>
+        </div>
+        <div class="card">
+          <h3>Flipkart Grid Hackathon — Semi-Finalist</h3>
+          <p>Proposed AI-driven supply-chain optimization with predictive analytics and RL.</p>
+        </div>
+        <div class="card">
+          <h3>National Physics Olympiad — AIR 433</h3>
+          <p>Top 0.2% nationally for analytical problem solving and applied mathematics.</p>
+        </div>
+        <div class="card">
+          <h3>JEE Main — Top 0.46%</h3>
+          <p>Among highest national ranks out of 1M+ candidates; admitted to IIT Palakkad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="fade-section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>I’m open to collaborations or professional opportunities in AI, ML, or intelligent systems.</p>
+      <p><a href="mailto:aryannmathur@gmail.com"><i class="fas fa-envelope"></i> aryannmathur@gmail.com</a></p>
+      <p><a href="https://github.com/neverthesameagain" target="_blank"><i class="fab fa-github"></i> GitHub</a> &nbsp;|&nbsp;
+         <a href="https://linkedin.com/in/aryannmathur" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 Aryan Mathur • Built with clarity and clean code.</p>
+  </footer>
+
+  <!-- ===== Scripts ===== -->
+  <script>
+    // Sticky on scroll (desktop/tablet)
+    const header = document.getElementById("navbar");
+    const mqMobile = window.matchMedia("(max-width: 768px)");
+    function handleScroll() {
+      if (!mqMobile.matches) {
+        if (window.scrollY > 80) header.classList.add("nav-visible");
+        else header.classList.remove("nav-visible");
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    // Mobile dropdown
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navMenu = document.querySelector(".nav-menu");
+    const navLinks = document.querySelectorAll(".nav-menu a");
+
+    mobileMenu.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = navMenu.classList.toggle("active");
+      mobileMenu.setAttribute("aria-expanded", open ? "true" : "false");
+      header.classList.add("nav-visible");
+    });
+
+    // Close dropdown when clicking outside (mobile)
+    document.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768 &&
+          navMenu.classList.contains("active") &&
+          !navMenu.contains(e.target) &&
+          !mobileMenu.contains(e.target)) {
+        navMenu.classList.remove("active");
+        mobileMenu.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Click highlight + close on mobile
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          navMenu.classList.remove("active");
+          mobileMenu.setAttribute("aria-expanded", "false");
+        }
+        document.querySelectorAll(".nav-menu a").forEach(a => a.classList.remove("active"));
+        link.classList.add("active");
+      });
+    });
+
+    // Scroll spy
+    const sections = Array.from(document.querySelectorAll("section[id]"));
+    function updateActiveLinkOnScroll() {
+      const scrollY = window.pageYOffset;
+      let currentId = null;
+      sections.forEach(section => {
+        const top = section.offsetTop - 150;
+        const height = section.offsetHeight;
+        if (scrollY >= top && scrollY < top + height) currentId = section.id;
+      });
+      if (currentId) {
+        document.querySelectorAll(".nav-menu a").forEach(a => a.classList.remove("active"));
+        const active = document.querySelector(`.nav-menu a[href="#${currentId}"]`);
+        if (active) active.classList.add("active");
+      }
+    }
+    window.addEventListener("scroll", updateActiveLinkOnScroll);
+    updateActiveLinkOnScroll();
+
+    // Fade-in observer
+    const fadeSections = document.querySelectorAll(".fade-section");
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(entry => entry.target.classList.toggle("visible", entry.isIntersecting)),
+      { threshold: 0.2 }
+    );
+    fadeSections.forEach(s => observer.observe(s));
+  </script>
 </body>
 </html>
