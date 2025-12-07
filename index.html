@@ -101,6 +101,12 @@
 
     /* ===== Grids / Cards ===== */
     .grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+    @media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
     .card {
       background: var(--panel);
       border-radius: var(--card-radius);
@@ -176,7 +182,8 @@
       <p class="section-subtitle">
         <a href="https://github.com/neverthesameagain" target="_blank"><i class="fab fa-github"></i> GitHub</a> &nbsp;|&nbsp;
         <a href="https://linkedin.com/in/aryannmathur" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &nbsp;|&nbsp;
-        <a href="resume.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Resume</a>
+        <a href="assets/resume.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Resume</a>
+
       </p>
     </div>
   </section>
