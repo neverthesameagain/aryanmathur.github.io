@@ -37,3 +37,20 @@ NEXT_PUBLIC_SITE_URL="https://your-domain.com"
 - Set `NEXT_PUBLIC_SITE_URL`
 - Build command: `npm run build`
 - Output: Next.js default (`next build`)
+
+## Deploy on GitHub Pages
+
+GitHub Pages is static hosting, so this repo is configured to export a static site (`next.config.ts` uses `output: "export"`).
+
+1) Push to `main`
+2) In GitHub: Settings → Pages → set **Source** to **GitHub Actions**
+3) The workflow `/.github/workflows/deploy.yml` builds and deploys `out/`
+
+**User site vs project site**
+
+- If the repo is named `<user>.github.io`, you don't need a base path.
+- If it's a project repo, set a repo base path:
+  - GitHub → Settings → Secrets and variables → Actions → Variables
+  - Add `NEXT_PUBLIC_BASE_PATH` with value `/<repo-name>`
+
+Optional: set `NEXT_PUBLIC_SITE_URL` (same place) for correct canonical URLs.
