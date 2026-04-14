@@ -2,10 +2,17 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined) ??
-  "https://aryanmathur.vercel.app";
+function resolveSiteUrl() {
+  const fromEnv = (process.env.NEXT_PUBLIC_SITE_URL ?? "").trim();
+  if (fromEnv) return fromEnv;
+
+  const vercel = (process.env.VERCEL_URL ?? "").trim();
+  if (vercel) return `https://${vercel}`;
+
+  return "https://aryanmathur.github.io";
+}
+
+const siteUrl = resolveSiteUrl();
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
