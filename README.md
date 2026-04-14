@@ -1,48 +1,39 @@
-# Aryan Mathur's Portfolio
+Aryan Mathur — Portfolio (Next.js App Router)
 
-Welcome to my personal portfolio website, showcasing my projects, skills, and contact information. This responsive website is built with HTML, CSS, and JavaScript.
+## Tech
 
-## Features
+- Next.js (App Router) + TypeScript
+- Tailwind CSS (v4)
+- Framer Motion
+- Deploy: Vercel
 
-- Responsive design that works on all devices
-- Smooth scrolling navigation
-- Project showcase section
-- Contact information with social media links
-- Modern and clean UI with animations
+## Local dev
 
-## Technologies Used
+```bash
+npm install
+npm run dev
+```
 
-- HTML5
-- CSS3 (with CSS Variables for theming)
-- JavaScript (ES6+)
-- Font Awesome for icons
-- Google Fonts (via CDN)
+Open `http://localhost:3000`.
 
-## Getting Started
+## Content updates
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/aryanmathur/aryanmathur.github.io.git
-   ```
+- Edit content in `src/lib/site.ts`
+- Main route in `src/app/page.tsx`
+- Global styles in `src/app/globals.css`
+- Resume PDF served from `public/resume.pdf`
 
-2. Open `index.html` in your browser to view the website locally.
+## SEO / canonical URL
 
-## Customization
+Set `NEXT_PUBLIC_SITE_URL` (recommended) so metadata, sitemap, and robots resolve correctly:
 
-1. Update the content in `index.html` with your personal information, projects, and links.
-2. Modify colors and styling in `styles.css` by updating the CSS variables in the `:root` selector.
-3. Add your own projects to the projects section.
+```bash
+NEXT_PUBLIC_SITE_URL="https://your-domain.com"
+```
 
-## Deployment
+## Deploy on Vercel
 
-This repository is set up to be hosted on GitHub Pages. Any changes pushed to the `main` branch will be automatically deployed to:
-
-https://aryanmathur.github.io
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## Contact
-
-Feel free to reach out to me through the contact section on the website or directly via email.
+- Import the repo in Vercel
+- Set `NEXT_PUBLIC_SITE_URL`
+- Build command: `npm run build`
+- Output: Next.js default (`next build`)
