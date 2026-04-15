@@ -8,7 +8,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "fancy-card rounded-2xl p-5 transition will-change-transform hover:-translate-y-0.5 hover:brightness-[1.05]",
+        "fancy-card rounded-2xl p-5 transition will-change-transform hover:-translate-y-1 hover:brightness-[1.08]",
         className,
       )}
     >

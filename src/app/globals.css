@@ -101,8 +101,14 @@ body {
   mask-image: radial-gradient(60% 60% at 50% 20%, #000 0%, transparent 70%);
 }
 
+
 .text-balance {
   text-wrap: balance;
+}
+
+.text-white\/55, .text-white\/65, .text-white\/70, .text-white\/80, .text-white\/90, .text-white\/95 {
+  color: #fff !important;
+  opacity: 0.96 !important;
 }
 
 .glass {
