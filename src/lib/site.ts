@@ -51,7 +51,10 @@ export const site = {
     email: "mailto:aryannmathur@gmail.com",
     github: "https://github.com/neverthesameagain",
     linkedin: "https://linkedin.com/in/aryannmathur",
-    resume: "/resume.pdf",
+    resume:
+      (typeof window !== "undefined" && window.__NEXT_DATA__?.assetPrefix
+        ? window.__NEXT_DATA__.assetPrefix
+        : (process.env.NEXT_PUBLIC_BASE_PATH || "")) + "/resume.pdf",
   },
   heroStats: [
     { k: "Role", v: "Software Engineer @ Mercor" },
