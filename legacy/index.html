@@ -164,7 +164,19 @@
   <section id="home" class="landing">
     <div>
       <h1 class="landing-title">Aryan Mathur</h1>
-      <p class="landing-subtitle">Developer • Researcher • Engineer </p>
+      <p class="landing-subtitle">Software Engineer • AI Systems Builder • Researcher</p>
+      <p style="margin-top:1.2rem; color:#7C3AED; font-size:1.1rem;">Building scalable software systems and intelligent products that ship.</p>
+      <ul style="margin:1.5rem 0 0 0; padding:0; list-style:none; color:#60A5FA; font-size:1rem;">
+        <li>Built with caffeine, chaos, and suspiciously good results</li>
+      </ul>
+      <div style="margin-top:2rem; display:flex; flex-wrap:wrap; gap:1.2rem; justify-content:center;">
+        <span style="background:#222; color:#fff; border-radius:8px; padding:0.5rem 1rem; font-size:0.95rem;">Software Engineer @ Mercor</span>
+        <span style="background:#222; color:#fff; border-radius:8px; padding:0.5rem 1rem; font-size:0.95rem;">Meta OpenEnv Finalist</span>
+        <span style="background:#222; color:#fff; border-radius:8px; padding:0.5rem 1rem; font-size:0.95rem;">Research 3 Publications</span>
+        <span style="background:#222; color:#fff; border-radius:8px; padding:0.5rem 1rem; font-size:0.95rem;">Built 25+ Projects</span>
+        <span style="background:#222; color:#fff; border-radius:8px; padding:0.5rem 1rem; font-size:0.95rem;">Amazon ML: Top 0.9%</span>
+        <span style="background:#222; color:#fff; border-radius:8px; padding:0.5rem 1rem; font-size:0.95rem;">IIT Palakkad</span>
+      </div>
     </div>
     <div class="scroll-hint"><i class="fas fa-chevron-down"></i></div>
   </section>
@@ -194,27 +206,35 @@
       <h2>Research & Publications</h2>
       <div class="grid">
         <div class="card">
-          <h3>Violence Detection & Highlight Generation</h3>
+          <h3>Fight Scene Detection & Violence Highlight Generation</h3>
           <p class="section-subtitle">Computer Vision • Sequence Learning</p>
           <ul>
-            <li>CNN–BiLSTM hybrid model for temporal violence detection in videos; 93.5% accuracy.</li>
-            <li>Attention-based explainability for highlight generation.</li>
+            <li>Architected a custom CNN–BiLSTM model achieving 93.5% accuracy.</li>
+            <li>Built a temporal highlight pipeline to summarize long-form videos.</li>
           </ul>
-          <div class="tags"><span>PyTorch</span><span>BiLSTM</span><span>Attention</span></div>
-          <p><a href="https://github.com/neverthesameagain/Voilence-Detection-and-Highlight-Generation-using-BiLSTM" target="_blank">Repository</a></p>
-          <p><a href="https://arxiv.org/abs/2406.05152" target="_blank">Paper</a></p>
+          <div class="tags"><span>PyTorch</span><span>BiLSTM</span><span>Attention</span><span>Video</span></div>
+          <p><a href="https://github.com/neverthesameagain/Voilence-Detection-and-Highlight-Generation-using-BiLSTM" target="_blank">Repository</a> | <a href="https://arxiv.org/abs/2406.05152" target="_blank">Paper</a></p>
         </div>
         <div class="card">
-          <h3>Perception–Decision Interleaving Transformers (PDiT)</h3>
-          <p class="section-subtitle">Deep RL • Transformers • Cognitive AI</p>
+          <h3>Adapting Interleaved Encoders with PPO for Language-Guided RL in BabyAI</h3>
+          <p class="section-subtitle">Reinforcement Learning • Transformers</p>
           <ul>
-            <li>Dual-transformer design to learn synchrony between perception and decision-making.</li>
-            <li>Improved BabyAI BossLevel performance with attention-based interpretability.</li>
+            <li>Implemented PDiT with PPO for better synchronization between perception and decision making.</li>
+            <li>Improved convergence stability with 42% lower reward variance.</li>
           </ul>
-          <div class="tags"><span>PPO</span><span>Transformers</span><span>BabyAI</span></div>
-          <p><a href="https://github.com/neverthesameagain/PDiT-Deep-Reinforcement-Learning" target="_blank">Repository</a></p>
-          <p><a href="https://drive.google.com/file/d/1W8teoMexKjUDvCyoeCs4LbSCG9rceWe9/view?usp=sharing" target="_blank">Paper</a></p>
-        
+          <div class="tags"><span>PPO</span><span>Transformers</span><span>BabyAI</span><span>Interpretability</span></div>
+          <p><a href="https://github.com/neverthesameagain/PDiT-Deep-Reinforcement-Learning" target="_blank">Repository</a> | <a href="https://arxiv.org/abs/2510.23148" target="_blank">Paper</a></p>
+        </div>
+        <div class="card">
+          <h3>Explainable Detection of AI-Generated Images</h3>
+          <p class="section-subtitle">XAI • Vision-Language Models</p>
+          <ul>
+            <li>Combined a lightweight CNN (Faster-Than-Lies) with Qwen2‑VL for artifact localization.</li>
+            <li>Achieved 96.5% accuracy with ~175ms CPU inference for real-time edge deployment.</li>
+          </ul>
+          <div class="tags"><span>VLMs</span><span>XAI</span><span>Edge Inference</span><span>Evaluation</span></div>
+          <p><a href="https://github.com/neverthesameagain/AI-Image-Detection-and-Reasoning---Adobe" target="_blank">Repository</a> | <a href="https://arxiv.org/abs/2510.23775" target="_blank">Paper</a></p>
+        </div>
       </div>
       </div>
     </div>
@@ -226,33 +246,33 @@
       <h2>Work Experience</h2>
       <div class="grid">
         <div class="card">
-          <h3>Advanced Application Engineering Intern — Accenture</h3>
-          <p class="duration">May 2025 – July 2025</p>
+          <h3>Software Engineer — Mercor</h3>
+          <p class="duration">Jan 2026 – Present • Remote (SF, USA)</p>
           <ul>
-            <li>Deployed distributed ML pipelines on AWS (SageMaker, Lambda, S3) integrating NLP microservices and REST APIs.</li>
-            <li>Automated CI/CD with GitHub Actions, reducing deployment latency by 35% and improving reliability.</li>
-            <li>Optimized performance for large-scale systems in Linux/Unix environments.</li>
+            <li>Contributing to large-scale backend systems inside complex, production-grade codebases.</li>
+            <li>Implementing features and resolving reliability/performance bugs across services written in Go and Python.</li>
+            <li>Building with an engineering-first mindset: observability, correctness, and pragmatic design tradeoffs.</li>
           </ul>
+          <div class="tags"><span>Go</span><span>Python</span><span>Backend Systems</span><span>Production Engineering</span></div>
         </div>
-
+        <div class="card">
+          <h3>Advanced Application Engineering Intern — Accenture</h3>
+          <p class="duration">May 2025 – Jul 2025 • Mumbai, India</p>
+          <ul>
+            <li>Built cloud-native Java applications with scalable REST APIs and integrated NLP services into existing systems.</li>
+            <li>Designed end-to-end pipelines on AWS using SageMaker, Lambda, and S3; automated DevOps workflows for data/ML.</li>
+            <li>Improved deployment reliability via CI/CD automation and environment hardening.</li>
+          </ul>
+          <div class="tags"><span>Java</span><span>AWS</span><span>REST</span><span>CI/CD</span></div>
+        </div>
         <div class="card">
           <h3>AI/ML Intern — EasyAlgo</h3>
-          <p class="duration">May 2024 – Aug 2024</p>
+          <p class="duration">May 2024 – Aug 2024 • New Delhi, India</p>
           <ul>
-            <li>Built predictive time-series models and information retrieval systems using TensorFlow, Python, and SQL.</li>
-            <li>Developed data pipelines with NumPy/Pandas achieving 40% faster ingestion.</li>
-            <li>Integrated RL-based optimization for adaptive trading strategies with distributed storage.</li>
+            <li>Engineered predictive time-series models and NLP-driven sentiment pipelines to generate trading signals.</li>
+            <li>Optimized data workflows with SQL, efficient data structures, and production-oriented pipelines.</li>
           </ul>
-        </div>
-
-        <div class="card">
-          <h3>Software & Platform Intern — Fact App</h3>
-          <p class="duration">June 2023 – July 2023</p>
-          <ul>
-            <li>Contributed to a web platform for JEE aspirants and JOSAA counselling.</li>
-            <li>Led debugging and testing, resolving critical UI/logic issues; onboarded 500 mentors and mentees.</li>
-            <li>Helped 9000+ students receive guided admission support via the platform.</li>
-          </ul>
+          <div class="tags"><span>Python</span><span>TensorFlow</span><span>SQL</span><span>NLP</span><span>Time Series</span></div>
         </div>
       </div>
     </div>
@@ -328,104 +348,74 @@
   <!-- ===== Projects ===== -->
   <section id="projects" class="fade-section">
     <div class="container">
-      <h2>Selected Projects</h2>
-      <p class="section-subtitle">From multimodal AI and reinforcement learning to embedded IoT and scalable software systems.</p>
+      <h2>Featured Projects</h2>
       <div class="grid">
-        <!-- Research / AI -->
-        <div class="card">
-          <h3>Violence Detection & Highlight Generation</h3>
-          <p><strong>Tech:</strong> PyTorch, CNN–BiLSTM, Attention</p>
-          <p>Hybrid model for temporal violence detection in video streams with attention-based explainability (93.5% accuracy).</p>
-          <p><a href="https://github.com/neverthesameagain/Voilence-Detection-and-Highlight-Generation-using-BiLSTM" target="_blank">Repository</a></p>
+          <div class="card">
+          <h3>Splitzy Pay</h3>
+          <p><strong>Full Stack Financial Management Application</strong><br>Feb 2026 – Apr 2026</p>
+          <ul>
+            <li>Built a full-stack expense splitting and financial analytics application as a DBMS course project.</li>
+            <li>Implemented UPI-style transfers, expense groups, category budgets, future expense planning, and unified financial ledger tracking.</li>
+          </ul>
         </div>
         <div class="card">
-          <h3>Perception–Decision Interleaving Transformers (PDiT)</h3>
-          <p><strong>Tech:</strong> Python, PPO, Transformers</p>
-          <p>Dual-transformer RL agent synchronizing perception and decision modules; improved BabyAI BossLevel performance.</p>
-          <p><a href="https://github.com/neverthesameagain/PDiT-Deep-Reinforcement-Learning" target="_blank">Repository</a></p>
+          <h3>CleaRAG</h3>
+          <p><strong>Transparent Retrieval-Augmented Question Answering System</strong><br>Dec 2025 - Jan 2026</p>
+          <ul>
+            <li>Built a document-grounded question answering system using Retrieval-Augmented Generation (RAG) with transparent retrieval traces.</li>
+            <li>Supports TXT and PDF document ingestion with explicit answer grounding and explainable context retrieval.</li>
+          </ul>
         </div>
         <div class="card">
-          <h3>AI Image Detection & Reasoning</h3>
-          <p><strong>Tech:</strong> CLIP, Qwen2-VL, PyTorch Lightning</p>
-          <p>Explainable multimodal classifier distinguishing AI-generated imagery with artifact-based reasoning (96.5% in challenge).</p>
-          <p><a href="https://github.com/neverthesameagain/AI-Image-Detection-and-Reasoning---Adobe" target="_blank">Repository</a></p>
-        </div>
-        <div class="card">
-          <h3>LossLess — Amazon ML Challenge 2025</h3>
-          <p><strong>Tech:</strong> DistilBERT, EfficientNet-B0, LightGBM</p>
-          <p>Multimodal text–image regression for e-commerce price prediction. Ranked Top 0.9% globally (251/27,600+).</p>
-          <p><a href="https://github.com/neverthesameagain/LossLess---Amazon-ML-Challenge-2025" target="_blank">Repository</a></p>
+          <h3>SpectrumHarmony</h3>
+          <p><strong>AI Driven Radio Resource Management Framework for Arista Networks</strong><br>Aug 2025 – Dec 2025</p>
+          <ul>
+            <li>Developed a large-scale Wi-Fi network simulation and optimization framework for multi-floor environments.</li>
+            <li>Designed for AI-driven Radio Resource Management, reinforcement learning based control, and wireless systems experimentation.</li>
+          </ul>
         </div>
 
-
-        <!-- SWE / Systems -->
         <div class="card">
-          <h3>CMate — Campus Companion Platform</h3>
-          <p><strong>Tech:</strong> Django, PostgreSQL, REST</p>
-          <p>Full-stack event and resource management system for 200+ users with secure authentication.</p>
-          <p><a href="https://github.com/neverthesameagain/All-You-Need" target="_blank">Repository</a></p>
+          <h3>Modest</h3>
+          <p><strong>Adaptive Content Moderation Under Uncertainty</strong><br>Apr 2026 – Present</p>
+          <ul>
+            <li>Built an uncertainty-aware NLP moderation system with confidence-based routing and explainable decision layers.</li>
+            <li>Designed for scalable content moderation under ambiguous and adversarial text conditions.</li>
+          </ul>
         </div>
         <div class="card">
-          <h3>Java Communicator — SWE 2025</h3>
-          <p><strong>Tech:</strong> Java, Maven, Sockets</p>
-          <p>Modular message-exchange system integrated with Azure DevOps CI/CD and self-hosted agents.</p>
-          <p><a href="https://github.com/neverthesameagain/Java-front-Communicator-SWE" target="_blank">Repository</a></p>
+          <h3>WhatsApp Archive Viewer</h3>
+          <p><strong>JavaScript Media and Chat Recovery Tool</strong><br>Mar 2026</p>
+          <ul>
+            <li>Developed a browser-based archive parsing tool for chat reconstruction and media recovery.</li>
+            <li>Supports chat browsing, metadata extraction, and image retrieval workflows.</li>
+          </ul>
         </div>
         <div class="card">
-          <h3>Personalised MCP Server</h3>
-          <p><strong>Tech:</strong> Python, FastAPI</p>
-          <p>Secure Model Context Protocol server for resume personalization with Bearer authentication.</p>
-          <p><a href="https://github.com/neverthesameagain/Personalised-MCP-server" target="_blank">Repository</a></p>
+          <h3>VartalApp</h3>
+          <p><strong>Full-Stack Collaborative Classroom Application</strong><br>June 2025 – December 2025</p>
+          <ul>
+            <li>Designed and built a cross-device full-stack application enabling screen sharing, video sharing, chat, collaborative canvas, AI assistance, cloud persistence, and file sharing for classroom environments.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>AI Generated Image Detection and Explanation Generation</h3>
+          <p><strong>Adobe Research</strong><br>November 2024 - December 2024</p>
+          <ul>
+            <li>Developed a system to identify whether or not an image is AI generated along with accurate natural language explanations for the detection. Used multimodal learning, Binary Neural Networks (BNNs) and Vision-Language Models (VLMs) to detect AI images and generate image explanations. The solution works at an accuracy of 96.5%.</li>
+          </ul>
         </div>
                 <div class="card">
-          <h3>Behaviour Simulation — Adobe Challenge</h3>
-          <p><strong>Tech:</strong> BERT, Transformers</p>
-          <p>NLP regression for tweet engagement prediction with attention-based pattern analysis.</p>
-          <p><a href="https://github.com/neverthesameagain/Behaviour-Simulation-Challenge-by-Adobe" target="_blank">Repository</a></p>
+          <h3>RecurLens Public</h3>
+          <p><strong>A metaprompting engine that visualises from a concept to execution and narrows down the best possible way</strong></p>
         </div>
         <div class="card">
-          <h3>MOSFET & Diode Parameter Extraction</h3>
-          <p><strong>Tech:</strong> Python, NumPy, Curve Fitting</p>
-          <p>Automated extraction of semiconductor I-V parameters bridging classical device models with ML regression.</p>
-          <p><a href="https://github.com/neverthesameagain/Parameter-Extraction-of-Diodes-and-MOSFETS" target="_blank">Repository</a></p>
-        </div>
-                <!-- IoT / Embedded -->
-        <div class="card">
-          <h3>PanEvaporiMeter</h3>
-          <p><strong>Tech:</strong> ESP32 (ESP-IDF), C++, HTML</p>
-          <p>IoT device measuring real-time evaporation using ultrasonic + temperature sensors with a responsive web UI.</p>
-          <p><a href="https://github.com/neverthesameagain/PanEvaporiMeter" target="_blank">Repository</a></p>
-        </div>
-        <div class="card">
-          <h3>What-ya-Wearing (YOLOv8 PPE Detection)</h3>
-          <p><strong>Tech:</strong> Python, YOLOv8, OpenCV</p>
-          <p>Real-time PPE detection with preprocessing pipelines converting Pascal VOC to YOLO format.</p>
-          <p><a href="https://github.com/neverthesameagain/What-ya-Wearing" target="_blank">Repository</a></p>
-        </div>
-                <div class="card">
-          <h3>KLM52Z Microprocessor Projects</h3>
-          <p><strong>Tech:</strong> C</p>
-          <p>Embedded applications including counters, ADC-based displays, and LED control on the KLM52Z platform.</p>
-          <p><a href="https://github.com/neverthesameagain/KLM52Z-Microprocessor-Projects" target="_blank">Repository</a></p>
-        </div>
-        <div class="card">
-          <h3>Industry Academia Conclave (IAC) WebApp — CI/CD HTML Deployment</h3>
-          <p><strong>Tech:</strong> HTML, JS, PHP</p>
-          <p>Static deployment demonstration using GitLab CI/CD for automated publishing workflows.</p>
-          <p><a href="https://github.com/neverthesameagain/iac" target="_blank">Repository</a></p>
-        </div>
-
-        <div class="card">
-          <h3>Data Extraction & Visualization</h3>
-          <p><strong>Tech:</strong> Python, Pandas, HTML</p>
-          <p>Automated HTML parsing and relational visualization of cross-linked entities with custom processing.</p>
-          <p><a href="https://github.com/neverthesameagain/Data_Extraction_and_Visualization_Project" target="_blank">Repository</a></p>
-        </div>
-        <div class="card">
-          <h3>Automated Data Extraction from Government Websites</h3>
-          <p><strong>Tech:</strong> Python, Selenium</p>
-          <p>Structured extraction of public datasets from government portals.</p>
-          <p><a href="https://github.com/neverthesameagain/Automated-Data-Extraction-from-Gov-Websites" target="_blank">Repository</a></p>
+          <h3>LossLess : Amazon ML Challenge 2025</h3>
+          <p><strong>LossLess — because we refuse to lose more than strictly necessary.</strong></p>
+          <p>A project by Aryan Mathur, Mandira Sharma, and Dikshya Lamichhane</p>
+          <ul>
+            <li><strong>Overview:</strong> End-to-end pipeline for the Amazon ML Challenge 2025, designed to predict product prices using multimodal data (text + image). Our approach focused on a Text-Only DistilBERT architecture, trained on 75,000 product listings, achieving 45.72 SMAPE and competing with full multimodal implementations.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -437,39 +427,27 @@
       <h2>Technical Skills</h2>
       <div class="skills-container">
         <div class="card">
-          <h3>Artificial Intelligence & Machine Learning</h3>
+          <h3>Languages</h3>
           <div class="skill-tags">
-            <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>HuggingFace</span><span>Scikit-learn</span><span>OpenCV</span><span>YOLOv8</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span>
+            <span>Python</span><span>C++</span><span>Scala</span><span>Java</span><span>MATLAB</span><span>JavaScript</span><span>SQL</span>
           </div>
         </div>
         <div class="card">
-          <h3>Reinforcement Learning & Decision Systems</h3>
+          <h3>Backend and Frameworks</h3>
           <div class="skill-tags">
-            <span>PPO</span><span>Q-Learning</span><span>Monte Carlo</span><span>Temporal Difference</span><span>Value Function Approximation</span><span>MATLAB</span><span>MiniGrid / BabyAI</span>
+            <span>PostgreSQL</span><span>MySQL</span><span>Hadoop</span><span>Spark</span><span>Hive</span><span>ReactJS</span><span>Node.js</span><span>Spring Boot</span><span>Microservice</span>
           </div>
         </div>
         <div class="card">
-          <h3>Systems & Backend Engineering</h3>
+          <h3>AI/ML</h3>
           <div class="skill-tags">
-            <span>Java</span><span>C++</span><span>Django</span><span>FastAPI</span><span>Flask</span><span>PostgreSQL</span><span>SQL</span><span>Docker</span><span>Git</span><span>REST API Design</span>
+            <span>Deep Learning</span><span>LLMs</span><span>NLP</span><span>RAGs</span><span>Computer Vision</span><span>Reinforcement Learning</span><span>Transformers</span><span>Big Data</span><span>Vision–Language Models</span><span>TensorFlow</span><span>PyTorch</span><span>Scikit-learn</span><span>Machine Learning</span><span>Gen AI</span>
           </div>
         </div>
         <div class="card">
-          <h3>Embedded Systems & IoT</h3>
+          <h3>DevOps & Cloud</h3>
           <div class="skill-tags">
-            <span>ESP32</span><span>C / C++</span><span>ESP-IDF</span><span>Arduino</span><span>Sensor Fusion</span><span>Signal Processing</span><span>Control Systems</span><span>MATLAB / Simulink</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Cloud, DevOps & Tools</h3>
-          <div class="skill-tags">
-            <span>AWS (SageMaker, Lambda, S3)</span><span>Azure DevOps</span><span>GitHub Actions</span><span>CI/CD Pipelines</span><span>Linux / Unix</span><span>Docker Compose</span><span>Networking</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Core Competencies</h3>
-          <div class="skill-tags">
-            <span>Data Structures & Algorithms</span><span>Software Design</span><span>Distributed Systems</span><span>Information Retrieval</span><span>Scalability</span><span>Optimization</span>
+            <span>AWS (Lambda, S3, SageMaker)</span><span>Azure DevOps</span><span>Kubernetes</span><span>CI/CD</span><span>Git</span><span>Linux</span><span>DBMS</span>
           </div>
         </div>
       </div>
@@ -482,28 +460,34 @@
       <h2>Achievements</h2>
       <div class="grid">
         <div class="card">
-          <h3>Amazon ML Challenge 2025 — Top 0.9%</h3>
-          <p>Ranked 251/27,600+ for multimodal product-price prediction using DistilBERT & EfficientNet fusion.</p>
+          <h3>Meta OpenEnv Hackathon — Finalist</h3>
+          <p>Built and shipped an end-to-end product prototype under real constraints (integration + latency + demo reliability).</p>
+          <div class="tags"><span>Hackathon</span><span>Product + systems</span></div>
         </div>
         <div class="card">
-          <h3>AWS AI/ML Scholar — Top 1%</h3>
-          <p>Recognized globally for applied ML and deep learning excellence.</p>
+          <h3>Amazon ML Challenge 2025 — Top 0.9% (251/27,600+)</h3>
+          <p>Ranked globally in a large-scale competition; engineered multimodal modeling + evaluation discipline.</p>
+          <div class="tags"><span>Ranking</span><span>ML systems</span></div>
         </div>
         <div class="card">
-          <h3>Adobe AI Challenge 2024 — National Finalist (Rank 9)</h3>
-          <p>Multimodal XAI system for detecting AI-generated images with artifact-based reasoning.</p>
+          <h3>Adobe AI Challenge — Rank 9</h3>
+          <p>Explainable AI-image detection with evidence-grounded reasoning; strong accuracy with production-minded latency.</p>
+          <div class="tags"><span>XAI</span><span>VLMs</span></div>
         </div>
         <div class="card">
-          <h3>Flipkart Grid Hackathon — Semi-Finalist</h3>
-          <p>Proposed AI-driven supply-chain optimization with predictive analytics and RL.</p>
+          <h3>AWS AI/ML Scholar</h3>
+          <p>Recognized for applied ML depth and consistent execution across projects and research.</p>
+          <div class="tags"><span>Scholarship</span><span>Signal</span></div>
         </div>
         <div class="card">
           <h3>National Physics Olympiad — AIR 433</h3>
-          <p>Top 0.2% nationally for analytical problem solving and applied mathematics.</p>
+          <p>Top 0.2% nationally; strong analytical problem-solving foundation that shows up in systems thinking.</p>
+          <div class="tags"><span>Olympiad</span><span>Math</span></div>
         </div>
         <div class="card">
-          <h3>JEE Main — Top 0.46%</h3>
-          <p>Among highest national ranks out of 1M+ candidates; admitted to IIT Palakkad.</p>
+          <h3>Inter IIT Leadership</h3>
+          <p>Led a 63-member delegation; managed stakeholders, logistics, and team execution across domains.</p>
+          <div class="tags"><span>Leadership</span><span>Execution</span></div>
         </div>
       </div>
     </div>
@@ -513,10 +497,11 @@
   <section id="contact" class="fade-section">
     <div class="container">
       <h2>Contact</h2>
-      <p>I’m open to collaborations or professional opportunities in AI, ML, or intelligent systems.</p>
+      <p>If you're hiring for backend / infra / AI product engineering roles, I’ll be a high-leverage engineer who ships.</p>
       <p><a href="mailto:aryannmathur@gmail.com"><i class="fas fa-envelope"></i> aryannmathur@gmail.com</a></p>
       <p><a href="https://github.com/neverthesameagain" target="_blank"><i class="fab fa-github"></i> GitHub</a> &nbsp;|&nbsp;
-         <a href="https://linkedin.com/in/aryannmathur" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+        <a href="https://linkedin.com/in/aryannmathur" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &nbsp;|&nbsp;
+        <a href="resume.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Resume</a></p>
     </div>
   </section>
 
