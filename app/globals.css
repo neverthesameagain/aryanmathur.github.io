@@ -12,7 +12,10 @@
   --color-line-strong: rgba(245, 244, 238, 0.18);
   --color-ink: #f3f1ec;
   --color-ink-dim: #9a9da4;
-  --color-ink-faint: #5b5e66;
+  /* Secondary-but-legible tier: ~5:1 against --color-bg, passes WCAG AA at small sizes.
+     Every use of this token carries real information (labels, units, metadata) — it is
+     never purely decorative, so it must stay readable rather than merely atmospheric. */
+  --color-ink-faint: #83868d;
 
   --color-signal: #ff5a36;
   --color-signal-dim: #7a3624;

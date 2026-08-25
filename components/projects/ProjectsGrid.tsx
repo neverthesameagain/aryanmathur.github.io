@@ -1,26 +1,24 @@
 "use client";
 
-import { projects, archiveRepos, githubProfile } from "@/data/projects";
+import { useState } from "react";
+import { featuredProjects, archiveProjects, githubProfile } from "@/data/projects";
 import { Reveal } from "@/components/shared/Reveal";
+import { SectionHeading } from "@/components/shared/SectionHeading";
+import { scrollToId } from "@/components/providers/SmoothScroll";
 
 export function ProjectsGrid() {
-  const rest = projects.filter((p) => p.status !== "flagship");
+  const [expanded, setExpanded] = useState(false);
 
   return (
-    <section id="projects" className="relative px-6 pb-28 sm:px-12">
+    <section id="projects" className="relative border-t border-line px-6 py-28 sm:px-12">
       <div className="mx-auto max-w-6xl">
-        <div className="mono-label text-[10px] text-ink-faint">more shipped work</div>
+        <SectionHeading kicker="BUILD" title="Featured work" accent="text-build" />
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {rest.map((p, i) => (
-            <Reveal key={p.id} delay={(i % 3) * 0.05}>
-              <a
-                href={p.live ?? p.repo ?? githubProfile}
-                target="_blank"
-                rel="noreferrer"
-                className="glass-panel group flex h-full flex-col rounded-xl p-5 transition hover:border-line-strong"
-              >
-                <h3 className="font-display text-base font-semibold text-ink">{p.name}</h3>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+          {featuredProjects.map((p, i) => {
+            const cardBody = (
+              <>
+                <h3 className="font-display text-lg font-semibold text-ink">{p.name}</h3>
                 <p className="mt-1.5 text-sm text-ink-dim">{p.tagline}</p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {p.stack.map((s) => (
@@ -30,35 +28,66 @@ export function ProjectsGrid() {
                   ))}
                 </div>
                 <span className="mono-label mt-auto pt-4 text-[9px] text-ink-faint group-hover:text-ink">
-                  view →
+                  {p.anchor ? "open microsite →" : "view →"}
                 </span>
-              </a>
-            </Reveal>
-          ))}
+              </>
+            );
+            return (
+              <Reveal key={p.id} delay={(i % 2) * 0.05}>
+                {p.anchor ? (
+                  <button
+                    onClick={() => scrollToId(p.anchor!)}
+                    className="glass-panel group flex h-full w-full flex-col rounded-xl p-5 text-left transition hover:border-build/40"
+                  >
+                    {cardBody}
+                  </button>
+                ) : (
+                  <a
+                    href={p.live ?? p.repo ?? githubProfile}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="glass-panel group flex h-full flex-col rounded-xl p-5 transition hover:border-line-strong"
+                  >
+                    {cardBody}
+                  </a>
+                )}
+              </Reveal>
+            );
+          })}
         </div>
 
         <Reveal delay={0.1} className="mt-16">
-          <div className="mono-label text-[10px] text-ink-faint">
-            $ ls ~/github/neverthesameagain — {archiveRepos.length} more repositories
-          </div>
-          <div className="mt-4 grid divide-y divide-line border-y border-line sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-3">
-            {archiveRepos.map((r) => (
-              <a
-                key={r.repo}
-                href={`${githubProfile}/${r.repo}`}
-                target="_blank"
-                rel="noreferrer"
-                className="group flex items-center justify-between gap-3 px-4 py-3 text-sm transition hover:bg-bg-raised"
-              >
-                <span className="truncate text-ink-dim group-hover:text-ink">
-                  {r.name.replace(/-/g, " ")}
-                </span>
-                <span className="mono-label shrink-0 text-[8px] text-ink-faint">
-                  {r.language ?? "—"}
-                </span>
-              </a>
-            ))}
-          </div>
+          <button
+            onClick={() => setExpanded((e) => !e)}
+            className="mono-label flex items-center gap-2 text-[10px] text-ink-dim hover:text-ink"
+          >
+            <span className={`inline-block transition-transform ${expanded ? "rotate-90" : ""}`}>→</span>
+            more from the lab — {archiveProjects.length} more repositories
+          </button>
+
+          {expanded && (
+            <div className="mt-4 grid divide-y divide-line border-y border-line sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-3">
+              {archiveProjects.map((r) => (
+                <a
+                  key={r.repo}
+                  href={`${githubProfile}/${r.repo}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex min-w-0 items-center justify-between gap-3 px-4 py-3 text-sm transition hover:bg-bg-raised"
+                >
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-ink-dim group-hover:text-ink">{r.name.replace(/-/g, " ")}</span>
+                    {r.tagline && (
+                      <span className="block truncate text-xs text-ink-faint">{r.tagline}</span>
+                    )}
+                  </span>
+                  <span className="mono-label shrink-0 text-[8px] text-ink-faint">
+                    {r.language ?? "—"}
+                  </span>
+                </a>
+              ))}
+            </div>
+          )}
         </Reveal>
 
         <a

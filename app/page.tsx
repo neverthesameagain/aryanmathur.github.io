@@ -2,12 +2,14 @@ import { BootSequence } from "@/components/boot/BootSequence";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { Dock } from "@/components/nav/Dock";
 import { Hero } from "@/components/hero/Hero";
+import { Skills } from "@/components/skills/Skills";
+import { Achievements } from "@/components/achievements/Achievements";
 import { SystemMap } from "@/components/system-map/SystemMap";
+import { ExperienceSection } from "@/components/experience/ExperienceSection";
 import { CommandCenter } from "@/components/leadership/CommandCenter";
 import { VartalAppMicrosite } from "@/components/projects/vartalapp/VartalAppMicrosite";
-import { ProjectsGrid } from "@/components/projects/ProjectsGrid";
 import { ResearchLab } from "@/components/research/ResearchLab";
-import { ExperienceStrip } from "@/components/experience/ExperienceStrip";
+import { ProjectsGrid } from "@/components/projects/ProjectsGrid";
 import { Footer } from "@/components/footer/Footer";
 
 export default function Home() {
@@ -17,12 +19,14 @@ export default function Home() {
       <Dock />
       <main>
         <Hero />
+        <Skills />
+        <Achievements />
         <SystemMap />
+        <ExperienceSection />
         <CommandCenter />
         <VartalAppMicrosite />
-        <ProjectsGrid />
         <ResearchLab />
-        <ExperienceStrip />
+        <ProjectsGrid />
       </main>
       <Footer />
     </SmoothScroll>

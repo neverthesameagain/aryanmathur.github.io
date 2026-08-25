@@ -96,7 +96,12 @@ export function BootSequence() {
           </div>
 
           <div className="mono-label flex items-center justify-between text-[11px] text-ink-faint">
-            <span>press any key to skip</span>
+            <button
+              onClick={finish}
+              className="rounded-full border border-line-strong px-3 py-1.5 text-ink-dim transition hover:border-signal hover:text-signal"
+            >
+              press any key to skip →
+            </button>
             <span>ARYAN.OS</span>
           </div>
         </motion.div>

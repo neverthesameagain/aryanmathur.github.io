@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Reveal } from "@/components/shared/Reveal";
 import { HUDFrame } from "@/components/shared/HUDFrame";
 import { CountUp } from "@/components/shared/CountUp";
+import { scrollToId } from "@/components/providers/SmoothScroll";
 
 const ACCENT_TEXT = {
   signal: "text-signal",
@@ -20,8 +21,9 @@ export function CommandCenter() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading kicker="PROGRAM MANAGEMENT" title="Command Center" />
         <p className="mt-4 max-w-2xl text-sm text-ink-dim">
-          Two large-scale programs, two standing institutional roles. Not committee work — planning, budget
-          ownership, and execution across teams I didn&apos;t get to hand-pick.
+          Programs, products, and institutional operations — led across technical and non-technical
+          environments. Not committee work — planning, budget ownership, and execution across teams I
+          didn&apos;t get to hand-pick.
         </p>
 
         <div className="mt-8 flex items-center gap-1 font-mono text-xs text-ink-faint">
@@ -34,7 +36,7 @@ export function CommandCenter() {
           <ProgramPanel entry={interIIT} />
         </div>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[ecell, placement].map((entry) => (
             <Reveal key={entry.id}>
               <div className="glass-panel h-full rounded-2xl p-6">
@@ -53,6 +55,25 @@ export function CommandCenter() {
               </div>
             </Reveal>
           ))}
+
+          <Reveal>
+            <button
+              onClick={() => scrollToId("vartalapp")}
+              className="glass-panel group flex h-full w-full flex-col rounded-2xl p-6 text-left transition hover:border-build/40"
+            >
+              <div className="mono-label text-[10px] text-build">5th program</div>
+              <h3 className="mt-2 font-display text-xl font-semibold text-ink">
+                VartalApp — Software Engineering Project Manager
+              </h3>
+              <p className="mt-3 text-sm text-ink-dim">
+                A full-stack collaborative classroom platform, run as a software engineering project manager
+                would run it — planning, requirements, milestones, delivery.
+              </p>
+              <span className="mono-label mt-4 border-t border-line pt-4 text-[9px] text-ink-faint group-hover:text-build">
+                open the full PM microsite →
+              </span>
+            </button>
+          </Reveal>
         </div>
       </div>
     </section>

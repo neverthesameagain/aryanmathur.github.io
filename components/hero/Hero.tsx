@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { profile, liveStats } from "@/data/profile";
-import { CompilingModal } from "@/components/system/CompilingModal";
+import { scrollToId } from "@/components/providers/SmoothScroll";
 
 const NeuralField = dynamic(() => import("./NeuralField").then((m) => m.NeuralField), {
   ssr: false,
@@ -12,7 +12,6 @@ const NeuralField = dynamic(() => import("./NeuralField").then((m) => m.NeuralFi
 
 export function Hero() {
   const [role, setRole] = useState(0);
-  const [terminalOpen, setTerminalOpen] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -55,21 +54,19 @@ export function Hero() {
         <p className="mt-2 max-w-xl text-sm text-ink-faint">{profile.subline}</p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3">
+          <button
+            onClick={() => scrollToId("system-map")}
+            className="mono-label rounded-full bg-ink px-6 py-3 text-[11px] text-bg transition hover:bg-signal hover:text-ink"
+          >
+            View System
+          </button>
           <a
             href={profile.resume}
             target="_blank"
             rel="noreferrer"
-            className="mono-label rounded-full bg-ink px-6 py-3 text-[11px] text-bg transition hover:bg-signal hover:text-ink"
-          >
-            Download Resume
-          </a>
-          <a
-            href={profile.github}
-            target="_blank"
-            rel="noreferrer"
             className="mono-label rounded-full border border-line-strong px-6 py-3 text-[11px] text-ink transition hover:border-signal hover:text-signal"
           >
-            GitHub
+            Resume
           </a>
           <a
             href={profile.linkedin}
@@ -79,32 +76,44 @@ export function Hero() {
           >
             LinkedIn
           </a>
-          <button
-            onClick={() => setTerminalOpen(true)}
-            className="mono-label rounded-full border border-dashed border-line-strong px-6 py-3 text-[11px] text-ink-dim transition hover:border-ink-dim hover:text-ink"
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noreferrer"
+            className="mono-label rounded-full border border-line-strong px-6 py-3 text-[11px] text-ink transition hover:border-signal hover:text-signal"
           >
-            Open Terminal
-          </button>
+            GitHub
+          </a>
         </div>
       </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-2 gap-x-6 gap-y-4 border-t border-line pt-6 sm:grid-cols-5">
-        {liveStats.map((s) => (
-          <div key={s.label}>
-            <div className="font-display text-2xl text-ink sm:text-3xl">{s.value}</div>
-            <div className="mono-label text-[10px] text-ink-faint">
-              {s.label} <span className="text-ink-faint/70">{s.unit}</span>
-            </div>
-          </div>
-        ))}
+        {liveStats.map((s) => {
+          const content = (
+            <>
+              <div className="font-display text-2xl text-ink sm:text-3xl">{s.value}</div>
+              <div className="mono-label text-[10px] text-ink-dim">
+                {s.label} <span className="text-ink-faint">{s.unit}</span>
+              </div>
+            </>
+          );
+          if ("anchor" in s && s.anchor) {
+            return (
+              <button
+                key={s.label}
+                onClick={() => scrollToId(s.anchor)}
+                className="group text-left"
+              >
+                {content}
+                <div className="mono-label mt-0.5 text-[8px] text-ink-faint opacity-0 transition group-hover:opacity-100">
+                  view →
+                </div>
+              </button>
+            );
+          }
+          return <div key={s.label}>{content}</div>;
+        })}
       </div>
-
-      <CompilingModal
-        open={terminalOpen}
-        onClose={() => setTerminalOpen(false)}
-        title="TERMINAL.exe is scheduled for the next build."
-        note="Command-line access to resume, projects, and research is coming in Phase 2. Use the system map below in the meantime."
-      />
     </section>
   );
 }

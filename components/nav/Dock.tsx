@@ -6,11 +6,13 @@ import { profile } from "@/data/profile";
 import { scrollToId } from "@/components/providers/SmoothScroll";
 
 const LINKS = [
+  { id: "skills", label: "Skills" },
+  { id: "achievements", label: "Achievements" },
   { id: "system-map", label: "Map" },
+  { id: "experience", label: "Experience" },
   { id: "leadership", label: "Leadership" },
   { id: "vartalapp", label: "Projects" },
   { id: "research", label: "Research" },
-  { id: "experience", label: "Experience" },
 ];
 
 export function Dock() {
