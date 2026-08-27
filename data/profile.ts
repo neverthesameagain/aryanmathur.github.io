@@ -16,7 +16,5 @@ export const profile = {
 export const liveStats = [
   { label: "GPA", value: "8.01", unit: "/ 10" },
   { label: "Publications", value: "3", unit: "papers" },
-  { label: "Budget managed", value: "₹34L", unit: "combined" },
-  { label: "People led", value: "293", unit: "across 2 orgs" },
   { label: "Hackathon finals", value: "2", unit: "national", anchor: "achievements" },
 ] as const;
