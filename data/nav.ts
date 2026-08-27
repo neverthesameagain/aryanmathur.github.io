@@ -44,9 +44,9 @@ export const systemNodes: SystemNode[] = [
     id: "hackathons",
     label: "Hackathons",
     code: "MISSIONS",
-    description: "Module scheduled for the next build.",
-    status: "compiling",
-    accent: "build",
+    description: "Meta OpenEnv & Paytm GeekRoom finalist builds, plus a national DSA semi-final.",
+    status: "online",
+    accent: "signal",
   },
   {
     id: "ideas",

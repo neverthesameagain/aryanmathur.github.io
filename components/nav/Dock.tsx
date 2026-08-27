@@ -13,6 +13,7 @@ const LINKS = [
   { id: "leadership", label: "Leadership" },
   { id: "vartalapp", label: "Projects" },
   { id: "research", label: "Research" },
+  { id: "hackathons", label: "Missions" },
 ];
 
 export function Dock() {

@@ -9,6 +9,7 @@ import { ExperienceSection } from "@/components/experience/ExperienceSection";
 import { CommandCenter } from "@/components/leadership/CommandCenter";
 import { VartalAppMicrosite } from "@/components/projects/vartalapp/VartalAppMicrosite";
 import { ResearchLab } from "@/components/research/ResearchLab";
+import { HackathonWarRoom } from "@/components/hackathons/HackathonWarRoom";
 import { ProjectsGrid } from "@/components/projects/ProjectsGrid";
 import { Footer } from "@/components/footer/Footer";
 import { Terminal } from "@/components/terminal/Terminal";
@@ -28,6 +29,7 @@ export default function Home() {
         <CommandCenter />
         <VartalAppMicrosite />
         <ResearchLab />
+        <HackathonWarRoom />
         <ProjectsGrid />
       </main>
       <Footer />
