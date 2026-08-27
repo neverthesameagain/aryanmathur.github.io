@@ -87,7 +87,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-2 gap-x-6 gap-y-4 border-t border-line pt-6 sm:grid-cols-5">
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-3 gap-x-6 gap-y-4 border-t border-line pt-6">
         {liveStats.map((s) => {
           const content = (
             <>

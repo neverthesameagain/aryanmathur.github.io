@@ -5,6 +5,7 @@ import { featuredProjects, archiveProjects, githubProfile } from "@/data/project
 import { Reveal } from "@/components/shared/Reveal";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { scrollToId } from "@/components/providers/SmoothScroll";
+import { GithubStats } from "@/components/github/GithubStats";
 
 export function ProjectsGrid() {
   const [expanded, setExpanded] = useState(false);
@@ -14,7 +15,11 @@ export function ProjectsGrid() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading kicker="BUILD" title="Featured work" accent="text-build" />
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        <div className="mt-8">
+          <GithubStats />
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
           {featuredProjects.map((p, i) => {
             const cardBody = (
               <>

@@ -11,12 +11,14 @@ import { VartalAppMicrosite } from "@/components/projects/vartalapp/VartalAppMic
 import { ResearchLab } from "@/components/research/ResearchLab";
 import { ProjectsGrid } from "@/components/projects/ProjectsGrid";
 import { Footer } from "@/components/footer/Footer";
+import { Terminal } from "@/components/terminal/Terminal";
 
 export default function Home() {
   return (
     <SmoothScroll>
       <BootSequence />
       <Dock />
+      <Terminal />
       <main>
         <Hero />
         <Skills />
